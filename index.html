@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metha Participações - Inteligência Corporativa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Jura:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Jura', 'sans-serif'], display: ['Syncopate', 'sans-serif'] },
+                    colors: { metha: { dark: '#040b16', blue: '#0a192f', cyan: '#64ffda', gray: '#8892b0', light: '#ccd6f6' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        .grid-bg { background-size: 50px 50px; background-image: linear-gradient(to right, rgba(100, 255, 218, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(100, 255, 218, 0.05) 1px, transparent 1px); }
+        .modal { opacity: 0; pointer-events: none; transition: opacity 0.4s; }
+        .modal.active { opacity: 1; pointer-events: auto; }
+        .modal-content { transform: translateY(30px); opacity: 0; transition: all 0.4s ease-out; }
+        .modal.active .modal-content { transform: translateY(0); opacity: 1; }
+    </style>
+</head>
+<body class="bg-metha-dark text-metha-gray antialiased grid-bg selection:bg-metha-cyan selection:text-metha-dark overflow-x-hidden">
+
+    <header class="fixed w-full z-50 bg-metha-dark/90 backdrop-blur-md border-b border-metha-cyan/20">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="font-display font-bold text-xl tracking-[0.2em] text-metha-light flex items-center gap-3">
+                <div class="w-8 h-8 border-2 border-metha-cyan flex items-center justify-center transform rotate-45">
+                    <div class="w-2 h-2 bg-metha-cyan"></div>
+                </div>
+                METHA.
+            </div>
+            <div class="hidden md:flex gap-8 items-center text-xs font-bold tracking-widest uppercase">
+                <a href="#tese" class="hover:text-metha-cyan transition">Tese</a>
+                <a href="#portfolio" class="hover:text-metha-cyan transition">Portfólio</a>
+                <button onclick="document.getElementById('modal-login').classList.add('active')" class="hover:text-metha-cyan transition">Portal Investidor</button>
+                <button onclick="document.getElementById('modal-cad').classList.add('active')" class="border border-metha-cyan text-metha-cyan px-6 py-2 hover:bg-metha-cyan/10 transition">Contato</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sec 1: Hero -->
+    <section class="min-h-screen flex items-center pt-20 relative">
+        <div class="absolute right-0 top-1/4 w-[500px] h-[500px] bg-metha-cyan/5 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center w-full">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <div class="font-display text-metha-cyan text-xs tracking-[0.3em] uppercase mb-6 flex items-center gap-2">
+                    <span class="w-10 h-px bg-metha-cyan"></span> Private Equity
+                </div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-metha-light leading-tight mb-8">
+                    Estruturando o <br>futuro do <span class="text-transparent bg-clip-text bg-gradient-to-r from-metha-cyan to-blue-500">capital.</span>
+                </h1>
+                <p class="text-lg text-metha-gray max-w-lg mb-10 leading-relaxed font-light">
+                    A Metha Participações identifica, adquire e escala operações no setor de tecnologia B2B e infraestrutura crítica com tese de valor de longo prazo.
+                </p>
+                <button onclick="document.getElementById('modal-cad').classList.add('active')" class="border border-metha-cyan text-metha-cyan hover:bg-metha-cyan hover:text-metha-dark font-display text-xs tracking-[0.2em] uppercase px-10 py-5 transition duration-300">
+                    Conhecer a Tese
+                </button>
+            </div>
+            
+            <div class="relative hidden lg:block" data-aos="fade-left" data-aos-duration="1000">
+                <div class="absolute inset-0 bg-metha-blue mix-blend-color z-10 opacity-60"></div>
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Corporate" class="w-full h-[600px] object-cover grayscale opacity-80" />
+                
+                <div class="absolute -bottom-10 -left-10 bg-metha-blue border border-metha-cyan/30 p-8 z-20 backdrop-blur-md">
+                    <div class="font-display text-3xl text-metha-light mb-2">R$ 1.5B+</div>
+                    <div class="text-xs uppercase tracking-widest text-metha-cyan">Assets Under Management</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sec 2: Tese de Investimento -->
+    <section id="tese" class="py-32 bg-metha-blue border-y border-metha-cyan/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="font-display text-3xl md:text-4xl text-metha-light mb-16 tracking-wide">Nossa <span class="text-metha-cyan">Tese</span></h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-metha-dark p-10 border-t-2 border-transparent hover:border-metha-cyan transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-metha-cyan text-4xl mb-6 font-display font-light">01.</div>
+                    <h3 class="text-xl font-bold text-metha-light mb-4">SaaS B2B</h3>
+                    <p class="text-sm leading-relaxed text-metha-gray">Foco em empresas de software empresarial com receita recorrente (MRR), churn baixo e alto potencial de escalabilidade na América Latina.</p>
+                </div>
+                <div class="bg-metha-dark p-10 border-t-2 border-transparent hover:border-metha-cyan transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-metha-cyan text-4xl mb-6 font-display font-light">02.</div>
+                    <h3 class="text-xl font-bold text-metha-light mb-4">M&A Estratégico</h3>
+                    <p class="text-sm leading-relaxed text-metha-gray">Atuamos na consolidação de mercados fragmentados (roll-up) gerando sinergias operacionais e ganho de eficiência em infraestrutura.</p>
+                </div>
+                <div class="bg-metha-dark p-10 border-t-2 border-transparent hover:border-metha-cyan transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-metha-cyan text-4xl mb-6 font-display font-light">03.</div>
+                    <h3 class="text-xl font-bold text-metha-light mb-4">Governança</h3>
+                    <p class="text-sm leading-relaxed text-metha-gray">Implementação imediata de conselho consultivo, auditoria big four e processos de compliance focados em preparar para saída (IPO/Estratégico).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sec 3: Governança / Processo -->
+    <section class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
+            <div class="w-full md:w-1/2" data-aos="fade-right">
+                <h2 class="font-display text-3xl md:text-4xl text-metha-light mb-8">Processo de <br>Originação</h2>
+                <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 shrink-0 border border-metha-cyan flex items-center justify-center text-metha-cyan font-bold">1</div>
+                        <div>
+                            <h4 class="text-metha-light font-bold text-lg mb-2">Screening Proprietário</h4>
+                            <p class="text-sm text-metha-gray">Mapeamento contínuo de targets através de data science e rede exclusiva de advisors.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 shrink-0 border border-metha-cyan flex items-center justify-center text-metha-cyan font-bold">2</div>
+                        <div>
+                            <h4 class="text-metha-light font-bold text-lg mb-2">Due Diligence Profunda</h4>
+                            <p class="text-sm text-metha-gray">Auditoria contábil, jurídica, trabalhista e tecnológica rigorosa antes de qualquer proposta vinculante.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 shrink-0 border border-metha-cyan flex items-center justify-center text-metha-cyan font-bold">3</div>
+                        <div>
+                            <h4 class="text-metha-light font-bold text-lg mb-2">Gestão Ativa (Value Creation)</h4>
+                            <p class="text-sm text-metha-gray">Nossos sócios assumem assentos no conselho e executam o plano de 100 dias desenhado previamente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 relative" data-aos="fade-left">
+                <div class="border border-metha-cyan/30 p-2">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team meeting" class="w-full grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-700" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sec 4: Contato (Footer) -->
+    <footer class="bg-metha-blue py-20 border-t border-metha-cyan/20">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12">
+            <div>
+                <div class="font-display font-bold text-xl tracking-[0.2em] text-metha-light mb-4 flex items-center gap-3">
+                    <div class="w-6 h-6 border border-metha-cyan flex items-center justify-center transform rotate-45"></div>
+                    METHA.
+                </div>
+                <p class="text-sm text-metha-gray mb-2">Relações com Investidores:</p>
+                <a href="mailto:contato@methaparticipacoes.com.br" class="text-metha-cyan hover:text-white transition tracking-wider">contato@methaparticipacoes.com.br</a>
+            </div>
+            
+            <div class="flex flex-col items-center md:items-end">
+                <p class="text-xs uppercase tracking-widest text-metha-gray mb-4 font-bold">Transparência & Ética corporativa</p>
+                <a href="https://www.reclameaqui.com.br/empresa/meta/sobre/" target="_blank" class="block opacity-70 hover:opacity-100 transition filter grayscale hover:grayscale-0">
+                    <img src="selo-ra.png" alt="Selo Reclame Aqui" class="h-16 object-contain bg-white rounded p-1" />
+                </a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-16 text-center text-xs text-metha-gray/50 uppercase tracking-widest">
+            © 2026 Metha Participações S.A.
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="modal-login" class="modal fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-metha-dark/90 backdrop-blur-md" onclick="document.getElementById('modal-login').classList.remove('active')"></div>
+        <div class="modal-content bg-metha-blue border border-metha-cyan/30 w-full max-w-sm p-10 relative z-10 shadow-[0_0_40px_rgba(100,255,218,0.1)]">
+            <button onclick="document.getElementById('modal-login').classList.remove('active')" class="absolute top-4 right-4 text-metha-gray hover:text-white">&times;</button>
+            <h3 class="font-display text-lg text-metha-light uppercase tracking-widest mb-8 border-b border-metha-cyan/20 pb-4">Acesso LP</h3>
+            
+            <form onsubmit="event.preventDefault(); alert('Acesso restrito liberado.'); document.getElementById('modal-login').classList.remove('active');">
+                <input type="text" placeholder="ID do Investidor" required class="w-full bg-metha-dark border border-metha-gray/20 px-4 py-3 mb-4 outline-none focus:border-metha-cyan text-metha-light text-sm transition">
+                <input type="password" placeholder="Key" required class="w-full bg-metha-dark border border-metha-gray/20 px-4 py-3 mb-8 outline-none focus:border-metha-cyan text-metha-light text-sm transition">
+                <button type="submit" class="w-full bg-metha-cyan text-metha-dark font-display text-xs font-bold uppercase tracking-widest py-4 hover:bg-white transition">Autenticar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-cad" class="modal fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-metha-dark/90 backdrop-blur-md" onclick="document.getElementById('modal-cad').classList.remove('active')"></div>
+        <div class="modal-content bg-metha-blue border border-metha-cyan/30 w-full max-w-md p-10 relative z-10 shadow-[0_0_40px_rgba(100,255,218,0.1)]">
+            <button onclick="document.getElementById('modal-cad').classList.remove('active')" class="absolute top-4 right-4 text-metha-gray hover:text-white">&times;</button>
+            <h3 class="font-display text-lg text-metha-light uppercase tracking-widest mb-4">Contato Institucional</h3>
+            <p class="text-sm text-metha-gray mb-8">Submeta sua proposta ou perfil para avaliação do comitê.</p>
+            
+            <form onsubmit="event.preventDefault(); alert('Informações recebidas. NDA será enviado no e-mail informado.'); document.getElementById('modal-cad').classList.remove('active');">
+                <input type="text" placeholder="Empresa / Fundo" required class="w-full bg-metha-dark border border-metha-gray/20 px-4 py-3 mb-4 outline-none focus:border-metha-cyan text-metha-light text-sm transition">
+                <input type="email" placeholder="E-mail Corporativo" required class="w-full bg-metha-dark border border-metha-gray/20 px-4 py-3 mb-4 outline-none focus:border-metha-cyan text-metha-light text-sm transition">
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <input type="password" placeholder="Definir Senha" required class="w-full bg-metha-dark border border-metha-gray/20 px-4 py-3 outline-none focus:border-metha-cyan text-metha-light text-sm transition">
+                    <input type="password" placeholder="Confirmar" required class="w-full bg-metha-dark border border-metha-gray/20 px-4 py-3 outline-none focus:border-metha-cyan text-metha-light text-sm transition">
+                </div>
+                <button type="submit" class="w-full border border-metha-cyan text-metha-cyan font-display text-xs font-bold uppercase tracking-widest py-4 hover:bg-metha-cyan hover:text-metha-dark transition">Solicitar Contato</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ once: true, offset: 50 });</script>
+</body>
+</html>
